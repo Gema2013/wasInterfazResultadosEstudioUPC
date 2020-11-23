@@ -53,6 +53,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="waConexionInterfaz">
+      <HintPath>..\waConexionInterfaz\bin\Debug\waConexionInterfaz.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
