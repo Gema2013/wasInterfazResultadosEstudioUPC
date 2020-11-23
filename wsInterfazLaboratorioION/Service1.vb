@@ -55,10 +55,10 @@ Public Class Service1
     Private Sub ProcesarOrdenes()
         While True
             ProcesaActualizaOrdenessPendiente()
-            'Thread.Sleep(60000) '10 min
-            Thread.Sleep(30000) '5 min 
-            'Thread.Sleep(6000) ' 1 min
-            'Thread.Sleep(360000) '60 MIN
+            'Thread.Sleep(600000) '10 min
+            Thread.Sleep(300000) '5 min 
+            'Thread.Sleep(60000) ' 1 min
+            'Thread.Sleep(3600000) '60 MIN
         End While
     End Sub
 
@@ -141,8 +141,9 @@ Public Class Service1
 
             End If
 
-
-            tran.Commit()
+            If tran IsNot Nothing Then
+                tran.Commit()
+            End If
             elogLogEventos.WriteEntry("Se procesaron las órdenes: " & strordenesProcesadas)
         Catch ex As Exception
             If tran IsNot Nothing Then
